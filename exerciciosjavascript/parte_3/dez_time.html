@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Times Brasileirão</title>
+</head>
+<body>
+
+    <h2>Cadastro de Times</h2>
+
+    <input type="text" id="time" placeholder="Digite o nome do time">
+    <button onclick="cadastrar()">Cadastrar</button>
+
+    <h3>Times cadastrados:</h3>
+    <div id="resultado"></div>
+
+    <script>
+        let times = [];
+
+        function cadastrar() {
+
+            let nome = document.getElementById("time").value;
+
+            if (nome != "") {
+                times.push(nome);
+                document.getElementById("time").value = "";
+            }
+
+            if (times.length == 10) {
+
+                let resultado = "";
+
+                for (let i = 0; i < times.length; i++) {
+                    resultado += (i + 1) + " - " + times[i] + "<br>";
+                }
+
+                document.getElementById("resultado").innerHTML = resultado;
+            }
+        }
+    </script>
+
+</body>
+</html>
